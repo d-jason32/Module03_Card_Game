@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                edu.farmingdale.module03_card_game/edu.farmingdale.module03_card_game.Game
+                                edu.farmingdale.module03_card_game/edu.farmingdale.module03_card_game.GameApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
