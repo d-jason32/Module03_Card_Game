@@ -39,7 +39,7 @@
             <HBox alignment="CENTER" prefHeight="116.0" prefWidth="672.0">
                <children>
                   <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="151.0" text="Find A Solution" />
-                  <TextField prefHeight="25.0" prefWidth="200.0" text="Solution" />
+                  <TextField prefHeight="25.0" prefWidth="200.0" styleClass="label" text="Solution" />
                   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Refresh" />
                </children>
             </HBox>
@@ -69,7 +69,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="124.0" prefWidth="881.0">
                <children>
-                  <TextField text="Enter a guess" />
+                  <TextField styleClass="label" text="Enter a guess" />
                   <Button mnemonicParsing="false" text="Verify" />
                </children>
             </HBox>
