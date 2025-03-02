@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<StackPane prefHeight="628.0" prefWidth="881.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane prefHeight="628.0" prefWidth="881.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.farmingdale.module03_card_game.GameController">
    <children>
       <VBox prefHeight="348.0" prefWidth="531.0">
          <children>
@@ -40,29 +39,29 @@
                <children>
                   <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="151.0" text="Find A Solution" />
                   <TextField prefHeight="25.0" prefWidth="200.0" styleClass="label" text="Solution" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Refresh" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="25.0" prefWidth="150.0" text="Refresh" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="298.0" prefWidth="881.0">
                <children>
-                  <ImageView fitHeight="217.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="card1" fitHeight="217.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@png/ace_of_hearts.png" />
+                        <Image url="@../../../png/39.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="214.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="card2" fitHeight="214.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@png/ace_of_spades.png" />
+                        <Image url="@../../../png/40.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="214.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="card3" fitHeight="214.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@png/ace_of_diamonds.png" />
+                        <Image url="@../../../png/38.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="214.0" fitWidth="200.0" layoutX="218.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="card4" fitHeight="214.0" fitWidth="200.0" layoutX="218.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@png/ace_of_clubs.png" />
+                        <Image url="@../../../png/37.png" />
                      </image>
                   </ImageView>
                </children>
@@ -75,7 +74,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Press Verify" />
+                  <Label text="Press Refresh to start. Press Verify to check answer." />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
