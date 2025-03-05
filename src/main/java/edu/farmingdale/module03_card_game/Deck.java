@@ -4,8 +4,10 @@ import javax.script.*;
 
 public class Deck {
     private int[] cardNumber;
-    String[] cardName;
-    int[] correspondingValues = {
+    public String[] cardName;
+    private int[] cardValue;
+
+    private int[] correspondingValues = {
             2, 2, 2, 2,
             3, 3, 3, 3,
             4, 4, 4, 4,
@@ -26,11 +28,17 @@ public class Deck {
     Deck(){
         cardNumber = new int[4];
         cardName = new String[4];
+        cardValue = new int[4];
 
 
 
         this.generateRandomCards();
         this.generateImageStrings();
+        this.setCardValues();
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Number:  " + this.getCardNumberArray()[i]);
+            System.out.println("Card value: " + this.getCardValues()[i]);
+        }
 
     }
 
@@ -98,4 +106,19 @@ public class Deck {
         ScriptEngine engine = manager.getEngineByName("nashorn");
         return (int) engine.eval(s);
     }
+
+    public void setCardValues(){
+        // Fixes off by 1 error
+        cardValue[0] = correspondingValues[cardNumber[0] - 1];
+        cardValue[1] = correspondingValues[cardNumber[1] - 1];
+        cardValue[2] = correspondingValues[cardNumber[2] - 1];
+        cardValue[3] = correspondingValues[cardNumber[3] - 1];
+
+    }
+
+    public int[] getCardValues(){
+        return cardValue;
+    }
+
+
 }
