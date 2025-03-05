@@ -68,8 +68,8 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="124.0" prefWidth="881.0">
                <children>
-                  <TextField styleClass="label" text="Enter a guess" />
-                  <Button mnemonicParsing="false" text="Verify" />
+                  <TextField fx:id="enteredString" styleClass="label" text="Enter a guess" />
+                  <Button fx:id="verifyButton" mnemonicParsing="false" onAction="#verify" text="Verify" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

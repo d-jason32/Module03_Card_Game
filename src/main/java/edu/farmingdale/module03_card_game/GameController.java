@@ -3,8 +3,11 @@ package edu.farmingdale.module03_card_game;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import javax.script.ScriptException;
 
 public class GameController {
 
@@ -20,9 +23,15 @@ public class GameController {
     @FXML
     private ImageView card4;
 
+    private Deck newDeck;
+
+    @FXML
+    private TextField enteredString;
+
+
     @FXML
     void refreshButton(ActionEvent event) {
-        Deck newDeck = new Deck();
+        newDeck = new Deck();
 
 
         card1.setImage(new Image(getClass().getResourceAsStream("/png/" + newDeck.cardName[0])));
@@ -30,6 +39,15 @@ public class GameController {
         card3.setImage(new Image(getClass().getResourceAsStream("/png/" + newDeck.cardName[2])));
         card4.setImage(new Image(getClass().getResourceAsStream("/png/" + newDeck.cardName[3])));
 
+    }
+
+    @FXML
+    void verify(ActionEvent event) throws ScriptException {
+        String s =enteredString.getText();
+
+        int i = newDeck.checkEnteredSolution(s);
+
+        System.out.println(i);
     }
 
 }
