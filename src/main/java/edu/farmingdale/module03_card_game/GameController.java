@@ -7,7 +7,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-
+/**
+ * The game controller class.
+ * @author Jason Devaraj
+ */
 public class GameController {
     @FXML
     private TextField solutionLabel;
@@ -35,13 +38,22 @@ public class GameController {
     @FXML
     private TextField enteredString;
 
+    /**
+     * Method that when clicked closes the application.
+     */
     @FXML
-    void closeScreen(ActionEvent event) {
+    void closeScreen() {
         System.exit(0);
     }
 
+    /**
+     * Method once the refresh button is clicked that generates 4 random cards,
+     * sets the emoji to thinking and prompts the user to press enter to verify their
+     * entered solution.
+     *
+     */
     @FXML
-    void refreshButton(ActionEvent event) {
+    void refreshButton() {
         // When refresh is pressed, a new deck of 4 cards is initialized.
         newDeck = new Deck();
 
@@ -49,6 +61,8 @@ public class GameController {
         emoji.setImage(new Image(getClass().getResourceAsStream("/png/thinking_emoji.png")));
 
         output.setText("Press enter to verify!");
+        solutionLabel.setText("Solution");
+
 
         // All the cards are replaced with a new image.
         card1.setImage(new Image(getClass().getResourceAsStream("/png/" + newDeck.cardName[0])));
@@ -58,8 +72,12 @@ public class GameController {
 
     }
 
+    /**
+     * Once the verify button is pressed, it displays to the user
+     * if their answer is correct or incorrect.
+     */
     @FXML
-    void verify(ActionEvent event) {
+    void verify() {
         // String s initialized to the string the user entered into the text box.
         String s = enteredString.getText();
         // Entered solutions are initialized in the Deck class.
@@ -73,6 +91,10 @@ public class GameController {
 
     }
 
+    /**
+     * Provides feedback to the user about the solution they entered.
+     * @param i Integer representing input about their answer.
+     */
     void check(int i){
         // When the user enters a correct solution.
         if (i == 0){
@@ -96,8 +118,13 @@ public class GameController {
         }
 
     }
+
+    /**
+     * Uses OpenAI API to generate a solution and present it to
+     * the user.
+     */
     @FXML
-    void findSolution(ActionEvent event) {
+    void findSolution() {
         // Generates a string that contains the solution from ChatGPT 4o.
         String solution = newDeck.generateSolution();
 
