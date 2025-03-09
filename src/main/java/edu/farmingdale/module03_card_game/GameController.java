@@ -30,7 +30,7 @@ public class GameController {
 
 
     @FXML
-    void refreshButton(ActionEvent event) {
+    void refreshButton(ActionEvent event) throws ScriptException {
         newDeck = new Deck();
 
 

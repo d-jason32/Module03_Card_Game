@@ -2,6 +2,7 @@ module edu.farmingdale.module03_card_game {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.scripting;
+    requires exp4j;
 
 
     opens edu.farmingdale.module03_card_game to javafx.fxml;

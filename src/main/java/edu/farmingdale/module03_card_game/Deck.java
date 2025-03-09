@@ -1,11 +1,16 @@
 package edu.farmingdale.module03_card_game;
 
-import javax.script.*;
+// EXP4J Library
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 
 public class Deck {
     private int[] cardNumber;
     public String[] cardName;
     private int[] cardValue;
+    String solution;
+
 
     private int[] correspondingValues = {
             2, 2, 2, 2,
@@ -23,22 +28,21 @@ public class Deck {
             12, 12, 12, 12
     };
 
-    String solution;
 
-    Deck(){
+    Deck() {
         cardNumber = new int[4];
         cardName = new String[4];
         cardValue = new int[4];
+
+        Expression expression = new ExpressionBuilder("3 + 5 * 2").build();
+        double result = expression.evaluate();
+        System.out.println("Result: " + result);
 
 
 
         this.generateRandomCards();
         this.generateImageStrings();
         this.setCardValues();
-        for (int i = 0; i < 4; i++) {
-            System.out.println("Number:  " + this.getCardNumberArray()[i]);
-            System.out.println("Card value: " + this.getCardValues()[i]);
-        }
 
     }
 
@@ -81,7 +85,7 @@ public class Deck {
 
     }
 
-    public int checkEnteredSolution(String s) throws ScriptException {
+    public int checkEnteredSolution(String s){
         int check = 0;
 
         // Make sure it only contains certain values
@@ -90,10 +94,6 @@ public class Deck {
             return 1;
         }
 
-        if (parseString(s) != 24){
-            System.out.println("Value is incorrect!");
-            return 2;
-        }
 
 
 
@@ -101,11 +101,6 @@ public class Deck {
         return check;
     }
 
-    public int parseString(String s) throws ScriptException {
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("nashorn");
-        return (int) engine.eval(s);
-    }
 
     public void setCardValues(){
         // Fixes off by 1 error
@@ -119,6 +114,7 @@ public class Deck {
     public int[] getCardValues(){
         return cardValue;
     }
+
 
 
 }

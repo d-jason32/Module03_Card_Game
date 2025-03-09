@@ -12,7 +12,7 @@ public class GameApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource("card-game.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
-        stage.setTitle("Hello!");
+        stage.setTitle("Card Game!");
         stage.setScene(scene);
         stage.show();
     }
