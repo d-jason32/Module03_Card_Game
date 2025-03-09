@@ -44,8 +44,9 @@ public class GameController {
     @FXML
     void verify(ActionEvent event) throws ScriptException {
         String s =enteredString.getText();
+        newDeck.setEnteredSolution(s);
 
-        int i = newDeck.checkEnteredSolution(s);
+        int i = newDeck.checkEnteredSolution();
 
         System.out.println(i);
     }

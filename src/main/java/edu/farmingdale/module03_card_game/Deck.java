@@ -8,8 +8,8 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 public class Deck {
     private int[] cardNumber;
     public String[] cardName;
-    private int[] cardValue;
-    String solution;
+    public int[] cardValue;
+    String enteredSolution;
 
 
     private int[] correspondingValues = {
@@ -34,9 +34,7 @@ public class Deck {
         cardName = new String[4];
         cardValue = new int[4];
 
-        Expression expression = new ExpressionBuilder("3 + 5 * 2").build();
-        double result = expression.evaluate();
-        System.out.println("Result: " + result);
+
 
 
 
@@ -85,17 +83,32 @@ public class Deck {
 
     }
 
-    public int checkEnteredSolution(String s){
+    public int checkEnteredSolution(){
         int check = 0;
+        String card1 = Integer.toString(cardValue[0]);
+        String card2 = Integer.toString(cardValue[1]);
+        String card3 = Integer.toString(cardValue[2]);
+        String card4 = Integer.toString(cardValue[3]);
 
         // Make sure it only contains certain values
-        if (!s.matches("[0-9()+\\-]+")){
+        if (!enteredSolution.matches("[0-9()+/*-]+")){
             System.out.println("Must only contain 0-9 + - / * ( )!");
             return 1;
         }
 
+        if (!enteredSolution.contains(card1) || !enteredSolution.contains(card2) || !enteredSolution.contains(card3) || !enteredSolution.contains(card4)){
+            System.out.println("Must contain all the cards!");
+            return 2;
+        }
 
+        Expression expression = new ExpressionBuilder(enteredSolution).build();
+        int result = (int) expression.evaluate();
+        System.out.println("Result: " + result);
 
+        if (result != 24){
+            System.out.println("Must evaluate to 24!");
+            return 3;
+        }
 
         // Entered string is good
         return check;
@@ -113,6 +126,10 @@ public class Deck {
 
     public int[] getCardValues(){
         return cardValue;
+    }
+
+    public void setEnteredSolution(String s){
+        this.enteredSolution = s;
     }
 
 
