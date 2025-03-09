@@ -1,6 +1,6 @@
 package edu.farmingdale.module03_card_game;
 
-// EXP4J Library
+
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
@@ -28,15 +28,10 @@ public class Deck {
             12, 12, 12, 12
     };
 
-
     Deck() {
         cardNumber = new int[4];
         cardName = new String[4];
         cardValue = new int[4];
-
-
-
-
 
         this.generateRandomCards();
         this.generateImageStrings();
@@ -73,12 +68,9 @@ public class Deck {
         String image4 = cardNumber[3] + ".png";
 
         this.cardName = new String[]{image1, image2, image3, image4};
-
     }
 
-    /**
-     *
-     */
+
     public void generateSolution(){
 
     }
@@ -131,7 +123,5 @@ public class Deck {
     public void setEnteredSolution(String s){
         this.enteredSolution = s;
     }
-
-
 
 }

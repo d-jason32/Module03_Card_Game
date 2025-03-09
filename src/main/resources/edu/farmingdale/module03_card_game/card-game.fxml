@@ -74,14 +74,14 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Press Refresh to start. Press Verify to check answer." />
+                  <Label fx:id="output" alignment="CENTER" text="Press Refresh to start!" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="emoji" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@thinking_emoji.png" />
+                        <Image url="@../../../png/sunglasses.png" />
                      </image>
                   </ImageView>
                </children>
