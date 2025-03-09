@@ -34,7 +34,6 @@ public class Deck {
         cardName = new String[4];
         cardValue = new int[4];
 
-
         this.generateRandomCards();
         this.generateImageStrings();
         this.setCardValues();
@@ -42,6 +41,7 @@ public class Deck {
 
     public void generateRandomCards(){
         int i = 0;
+
         while(i < 4) {
             int randomNumber = (int) (Math.random() * 52) + 1;
 
@@ -74,7 +74,7 @@ public class Deck {
         String card4 = Integer.toString(cardValue[3]);
 
         // Make sure it only contains certain values
-        if (!enteredSolution.matches("[0-9()+/*-]+")){
+        if (!enteredSolution.matches("[0-9()+/*\\s-]+")){
             System.out.println("Must only contain 0-9 + - / * ( )!");
             return 1;
         }
@@ -120,18 +120,16 @@ public class Deck {
         String messageToChatbot = "Generate a math expression using *,/,+,- that evaluates" +
                 " to the integer 24. It must only use these numbers once: " + card1 + ","
                 + card2 + "," + card3 + "," + card4 + "." + " It is possible the solution doesn't exist so just print out " +
-                "NO SOLUTION is that is the case. Only say the expression, nothing else. IMPORTANT: double" +
+                "NO SOLUTION if that is the case. Only say the expression, nothing else. IMPORTANT: double" +
                 " check to make sure the expression evaluates to 24. " +
                 " If a solution does not exist, print out NO SOLUTION. Do not show a expression that" +
                 "does not evaluate to 24. Print out one and only one expression!";
 
         String apiKey = System.getenv("OPENAI_API_KEY");
 
-
         var openAI = SimpleOpenAI.builder()
                 .apiKey(apiKey)
                 .build();
-
 
         var chatRequest = ChatRequest.builder()
                 .model("gpt-4o")

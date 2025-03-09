@@ -1,15 +1,16 @@
+/* Changes button font to 20 pt Ariel. Button becomes yellow with 20 px white font. */
 .button {
     -fx-font: 20pt Ariel;
     -fx-background-color: #DAA520;
     -fx-text-fill: white;
     -fx-font-size: 20px;
 }
-
+/* Changes label font to 14 pt Ariel. */
 .label {
     -fx-font: 14pt Ariel;
     -fx-font-size: 20px;
 }
-
+/* Changes stack pane background color to white. */
 .StackPane {
     -fx-background-color: #FFFFFF;
 }
