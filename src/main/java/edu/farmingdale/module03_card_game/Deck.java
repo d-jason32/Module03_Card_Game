@@ -185,7 +185,7 @@ public class Deck {
                 .message(ChatMessage.SystemMessage.of("Double check your work before typing a response."))
                 .message(ChatMessage.UserMessage.of(messageToChatbot))
                 .temperature(0.0)
-                .maxCompletionTokens(100)
+                .maxCompletionTokens(300)
                 .build();
 
         var futureChat = openAI.chatCompletions().create(chatRequest);

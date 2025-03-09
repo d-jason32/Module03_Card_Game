@@ -1,6 +1,6 @@
 # 24 Puzzle Card Game
 
-Put video here!!!
+[mod03assignmentfinal.mp4](../../../../Desktop/mod03assignmentfinal.mp4)
 
 ## Description
 
