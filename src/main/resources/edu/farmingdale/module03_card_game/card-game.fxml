@@ -27,8 +27,8 @@
             </MenuBar>
             <HBox alignment="CENTER" prefHeight="116.0" prefWidth="672.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="165.0" text="Find A Solution" />
-                  <TextField prefHeight="25.0" prefWidth="200.0" styleClass="label" text="Solution" />
+                  <Button fx:id="solutionButton" mnemonicParsing="false" onAction="#findSolution" prefHeight="37.0" prefWidth="165.0" text="Find A Solution" />
+                  <TextField fx:id="solutionLabel" prefHeight="25.0" prefWidth="200.0" styleClass="label" text="Solution" />
                   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="38.0" prefWidth="163.0" text="Refresh" />
                </children>
             </HBox>

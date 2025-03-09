@@ -10,6 +10,9 @@ import javafx.scene.image.ImageView;
 
 public class GameController {
     @FXML
+    private TextField solutionLabel;
+
+    @FXML
     private Label output;
 
     @FXML
@@ -87,6 +90,12 @@ public class GameController {
             output.setText("Wrong! Doesn't evaluate to 24!");
         }
 
+    }
+    @FXML
+    void findSolution(ActionEvent event) {
+        String solution = newDeck.generateSolution();
+
+        solutionLabel.setText(solution);
     }
 
 }
