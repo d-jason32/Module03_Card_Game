@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane prefHeight="628.0" prefWidth="881.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.farmingdale.module03_card_game.GameController">
+<StackPane prefHeight="628.0" prefWidth="881.0" styleClass="StackPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.farmingdale.module03_card_game.GameController">
    <children>
       <VBox prefHeight="348.0" prefWidth="531.0">
          <children>
@@ -20,26 +20,16 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" onAction="#closeScreen" text="Close" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
             <HBox alignment="CENTER" prefHeight="116.0" prefWidth="672.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="151.0" text="Find A Solution" />
+                  <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="165.0" text="Find A Solution" />
                   <TextField prefHeight="25.0" prefWidth="200.0" styleClass="label" text="Solution" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="25.0" prefWidth="150.0" text="Refresh" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="38.0" prefWidth="163.0" text="Refresh" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="298.0" prefWidth="881.0">
@@ -69,12 +59,12 @@
             <HBox alignment="CENTER" prefHeight="124.0" prefWidth="881.0">
                <children>
                   <TextField fx:id="enteredString" styleClass="label" text="Enter a guess" />
-                  <Button fx:id="verifyButton" mnemonicParsing="false" onAction="#verify" text="Verify" />
+                  <Button fx:id="verifyButton" mnemonicParsing="false" onAction="#verify" prefHeight="39.0" prefWidth="101.0" text="Verify" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="output" alignment="CENTER" text="Press Refresh to start!" />
+                  <Label fx:id="output" alignment="CENTER" prefHeight="26.0" prefWidth="490.0" text="Press Refresh to start!" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

@@ -1,9 +1,7 @@
 package edu.farmingdale.module03_card_game;
 
-
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
-
 
 public class Deck {
     private int[] cardNumber;
@@ -12,7 +10,7 @@ public class Deck {
     String enteredSolution;
 
 
-    private int[] correspondingValues = {
+    private final int[] correspondingValues = {
             2, 2, 2, 2,
             3, 3, 3, 3,
             4, 4, 4, 4,
@@ -37,14 +35,6 @@ public class Deck {
         this.generateImageStrings();
         this.setCardValues();
 
-    }
-
-    public int[] getCardNumberArray() {
-        return cardNumber;
-    }
-
-    public String[] getCardNameArray() {
-        return cardName;
     }
 
     public void generateRandomCards(){
@@ -116,9 +106,7 @@ public class Deck {
 
     }
 
-    public int[] getCardValues(){
-        return cardValue;
-    }
+
 
     public void setEnteredSolution(String s){
         this.enteredSolution = s;

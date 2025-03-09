@@ -32,6 +32,10 @@ public class GameController {
     @FXML
     private TextField enteredString;
 
+    @FXML
+    void closeScreen(ActionEvent event) {
+        System.exit(0);
+    }
 
     @FXML
     void refreshButton(ActionEvent event) {
